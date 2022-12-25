@@ -1,6 +1,10 @@
 
 
-exports.getAllPost = (req, res, next) => {}
+exports.getAllPost = (req, res, next) => {
+    res.json({
+        message: 'Hello from the homepage'
+    })
+}
 
 exports.getBlogPost = (req, res, next) => {}
 

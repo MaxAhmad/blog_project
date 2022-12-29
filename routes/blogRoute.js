@@ -1,18 +1,17 @@
-const express = require('express')
+const express = require("express");
 
-const blogController = require('../controllers/blogControllers')
+const blogController = require("../controllers/blogControllers");
 
-const router = express.Router()
+const router = express.Router();
 
+router.get("/", blogController.getAllPost);
 
-router.get('/', blogController.getAllPost)
+router.get("/:id", blogController.getBlogPost);
 
-router.get('/:id', blogController.getBlogPost)
+router.post("/", blogController.createBlogPost);
 
-router.post('/', blogController.createBlogPost)
+router.patch("/:id", blogController.updateBlogPost);
 
-router.patch('/:id', blogController.updateBlogPost)
+router.delete("/:id", blogController.deleteBlogPost);
 
-router.delete('/:id', blogController.deleteBlogPost)
-
-module.exports = router
+module.exports = router;
